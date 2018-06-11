@@ -28,4 +28,10 @@ func main() {
 	/* beware := means declaration and not assignment so already declared variable will throw error
 	Uncomment line 26 and you will see.*/
 	fmt.Println(l)
+
+	// Type casting is important in Go, We cannot add two different type of numeric values without type catsing.
+	var r byte = 10 // Byte is just alias for int8
+	var s float32 = 20.9  //float32 for 4bytes
+	fmt.Println(s)
+	fmt.Println(float32(r) + s) // Type casting on r
 }
