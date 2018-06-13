@@ -31,19 +31,6 @@ func printOperation(a int, f func(int)int){
 	fmt.Println(f(a))
 }
 
-// Now it's time to make a function, that returns a function, CONCEPT here is called Closure
-
-/*A closure is a function value that references variables from outside its body.
-The function may access and assign to the referenced variables; in this sense the function is "bound" to the variables.
-*/
-
-func makeAdder(b int) func(int) int{
-	return func(a int) int{
-		return a + b
-	}
-}
-
-
 func main() {
 	add(1,2)
 
@@ -66,8 +53,4 @@ func main() {
 	// The calling 
 	printOperation(5, addTwo)
 	printOperation(10, addOne)
-	 
-	// Call makAdder function
-	x := makeAdder(2)	// Assign function to a variable and pass int argument
-	fmt.Println(x(3))	// The function then returns a function, which is also expecting an int argument
 }
