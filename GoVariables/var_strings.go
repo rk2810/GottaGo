@@ -23,6 +23,7 @@ func main() {
 	/* There is a huge shitty shit in Go when using arrays.
 	The arrays in Go are fixed size, unlike python, you can't have variable length of arrays
 	Infact, you'll face issues in following operations:
+	
 	var x [4]int
 	var z [5]int = x
 	>>> cannot use x (type [4]int) as type [5]int in assignment

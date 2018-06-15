@@ -34,4 +34,5 @@ func main() {
 	var s float32 = 20.9  //float32 for 4bytes
 	fmt.Println(s)
 	fmt.Println(float32(r) + s) // Type casting on r
+
 }
