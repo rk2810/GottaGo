@@ -31,6 +31,7 @@ func main() {
 	h := Baz{D:"Hi", Foo:f}
 	fmt.Println(h.b) // That's how you call value from an embedded struct
 
-	var f1 Foo = h.Foo
+	var f1 Foo
+	f1 = h.Foo
 	fmt.Println(f1)
 }
