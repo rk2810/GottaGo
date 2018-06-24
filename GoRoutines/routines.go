@@ -1,7 +1,7 @@
 package main
 
 import (
-	"time"
+	"sync"
 	"fmt"
 )
 
@@ -9,8 +9,13 @@ func runMe(){
 	fmt.Println("Hello from Go routine!")
 }
 func main(){
-	go runMe()
-	/* This is just an example, should never do this irl, cuz we never know how long we
-	   need to wait for go routine to finish */
-	time.Sleep(1 * time.Second) // sleep for a second
+	// We use WaitGroup instead of sleep
+	var wg sync.WaitGroup // We declare wg of type wait group
+	wg.Add(1) // add 1 go routine
+	go func() { // yep, A closure
+		runMe()
+		wg.Done()
+	}()
+
+	wg.Wait()
 }
