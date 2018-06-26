@@ -16,13 +16,11 @@ func main(){
 	}()
 
 	in <- 1
-	in <- 2
 	o1 := <- out
+	in <- 2
 	o2 := <- out
 
 	// It's pretty clear that program doesnt know how many values its gonna get and hence the deadlock
 
 	fmt.Println(o1, o2)
 }
-
-// fatal error: all goroutines are asleep - deadlock!
